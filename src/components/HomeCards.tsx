@@ -5,7 +5,7 @@ import CardText from "./CardText";
 
 const HomeCards = () => {
   return (
-    <section className="px-4">
+    <section className="px-4 py-4">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card>
           <HeadingThree>Find a Job</HeadingThree>
