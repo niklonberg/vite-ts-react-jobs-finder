@@ -1,10 +1,7 @@
 import React, { PropsWithChildren } from "react";
+import { ClassName } from "../types/className";
 
-interface CardProps {
-  className?: string;
-}
-
-const Card: React.FC<PropsWithChildren<CardProps>> = ({
+const Card: React.FC<PropsWithChildren<ClassName>> = ({
   className,
   children,
 }) => {
