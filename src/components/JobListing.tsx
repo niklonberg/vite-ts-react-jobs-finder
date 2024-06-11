@@ -24,7 +24,7 @@ const JobListing: React.FC<JobListingProps> = ({ job }) => {
       <div>
         <button
           className="text-indigo-600 py-4 pr-4 hover:text-indigo-800"
-          onClick={() => setShowFullDescription(!showFullDescription)}
+          onClick={() => setShowFullDescription((prevState) => !prevState)}
         >
           {showFullDescription ? "Less" : "More"}
         </button>
