@@ -12,14 +12,14 @@ const JobListing: React.FC<JobListingProps> = ({ job }) => {
         <p className="text-gray-500 my-2">{job.type}</p>
         <h3 className="font-bold text-lg mb-6">{job.title}</h3>
         <p className="mb-4">{job.description}</p>
-        <button>More</button>
-        <div className="border-b-2 pb-2 text-sm text-indigo-500 font-bold">{`${job.salary} / Year`}</div>
+        <button className="text-indigo-600 py-4 pr-4 hover:text-indigo-800">More</button>
+        <div className="border-b-2 pb-2 text-sm text-indigo-600">{`${job.salary} / Year`}</div>
       </div>
       <div className="flex items-center justify-between my-4">
         <address className="text-orange-700 not-italic">{job.location}</address>
         <a
           href={`/jobs/${job.id}`}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md font-semibold"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-semibold"
         >
           Read More
         </a>
