@@ -7,7 +7,7 @@ interface JobListingProps {
 
 const JobListing: React.FC<JobListingProps> = ({ job }) => {
   return (
-    <div key={job.id} className="bg-white p-4 shadow-md rounded-3xl">
+    <div className="bg-white p-4 shadow-md rounded-3xl">
       <p>{job.type}</p>
       <h3>{job.title}</h3>
       <p>{job.description}</p>
