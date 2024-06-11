@@ -6,13 +6,26 @@ interface JobListingProps {
 }
 
 const JobListing: React.FC<JobListingProps> = ({ job }) => {
+  const [showFullDescription, setShowFullDescription] = React.useState(false);
+
+  let description = job.description;
+
+  if (!showFullDescription) {
+    description = description.substring(0, 120) + "...";
+  }
+
   return (
     <div className="bg-white p-4 shadow-md rounded-2xl flex flex-col justify-between">
       <div>
         <p className="text-gray-500 my-2">{job.type}</p>
         <h3 className="font-bold text-lg mb-6">{job.title}</h3>
-        <p className="mb-4">{job.description}</p>
-        <button className="text-indigo-600 py-4 pr-4 hover:text-indigo-800">More</button>
+        <p className="mb-4">{description}</p>
+        <button
+          className="text-indigo-600 py-4 pr-4 hover:text-indigo-800"
+          onClick={() => setShowFullDescription(!showFullDescription)}
+        >
+          {showFullDescription ? "Less" : "More"}
+        </button>
         <div className="border-b-2 pb-2 text-sm text-indigo-600">{`${job.salary} / Year`}</div>
       </div>
       <div className="flex items-center justify-between my-4">
