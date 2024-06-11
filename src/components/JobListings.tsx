@@ -1,5 +1,6 @@
 import React from "react";
 import jobs from "../jobs.json";
+import JobListing from "./JobListing";
 
 const JobListings = () => {
   console.log(jobs);
@@ -9,18 +10,7 @@ const JobListings = () => {
         <h2>Browse Jobs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {jobs.map((job) => (
-            <div key={job.id} className="bg-white p-4 shadow-md rounded-3xl">
-              <p>{job.type}</p>
-              <h3>{job.title}</h3>
-              <p>{job.description}</p>
-              <div>{`${job.salary}  / Year`}</div>
-              <a
-                href={`/jobs/${job.id}`}
-                className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md font-semibold inline-block mt-4"
-              >
-                Read More
-              </a>
-            </div>
+            <JobListing job={job} />
           ))}
         </div>
       </div>
