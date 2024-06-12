@@ -1,5 +1,6 @@
 import React from "react";
 import { Job } from "../types/Job";
+import { FaMapMarker } from "react-icons/fa";
 
 interface JobListingProps {
   job: Job;
@@ -31,6 +32,7 @@ const JobListing: React.FC<JobListingProps> = ({ job }) => {
         <p className="border-b-2 pb-2 text-sm text-indigo-600">{`${job.salary} / Year`}</p>
         <div className="flex items-center justify-between py-4">
           <address className="text-orange-700 not-italic">
+            <FaMapMarker className="inline pb-1 text-lg mr-2" />
             {job.location}
           </address>
           <a
