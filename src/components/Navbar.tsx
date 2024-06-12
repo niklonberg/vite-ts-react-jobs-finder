@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
+  // the isActive prop is passed by NavLink
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    isActive
+      ? "bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+      : "text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2";
+
   return (
     <nav className="bg-indigo-700 text-white border-b-2 border-indigo-500">
       <ul className="flex items-center justify-between max-w-7xl mx-auto py-4 px-6">
@@ -12,9 +19,15 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex gap-6">
-          <Link to="/">Home</Link>
-          <Link to="/jobs">Jobs</Link>
-          <Link to="/add-job">Add Job</Link>
+          <NavLink to="/" className={linkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/jobs" className={linkClass}>
+            Jobs
+          </NavLink>
+          <NavLink to="/add-job" className={linkClass}>
+            Add Job
+          </NavLink>
         </div>
       </ul>
     </nav>
