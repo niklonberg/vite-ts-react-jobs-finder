@@ -1,6 +1,7 @@
 import React from "react";
 import JobListing from "./JobListing";
 import { Job } from "../types/Job";
+import Spinner from "./Spinner";
 
 const JobListings = ({ showAll = false }) => {
   const [jobs, setJobs] = React.useState<Job[]>([]);
@@ -28,13 +29,15 @@ const JobListings = ({ showAll = false }) => {
         <h2 className="text-center text-2xl text-indigo-500 font-bold mb-4">
           {showAll ? "All Jobs" : "Recent Jobs"}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            jobs.map((job) => <JobListing key={job.id} job={job} />)
-          )}
-        </div>
+        {isLoading ? (
+          <Spinner isLoading={isLoading} />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {jobs.map((job) => (
+              <JobListing key={job.id} job={job} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
