@@ -9,8 +9,11 @@ const JobListings = ({ showAll = false }) => {
 
   React.useEffect(() => {
     async function fetchJobs() {
+      const apiUrl = showAll
+        ? "http://localhost:8000/jobs"
+        : "http://localhost:8000/jobs?_limit=3";
       try {
-        const res = await fetch("http://localhost:8000/jobs");
+        const res = await fetch(apiUrl);
         const data = await res.json();
         setJobs(data);
       } catch (error) {
