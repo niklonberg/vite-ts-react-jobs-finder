@@ -1,6 +1,7 @@
 import React from "react";
 import { Job } from "../types/Job";
 import { FaMapMarker } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface JobListingProps {
   job: Job;
@@ -35,12 +36,12 @@ const JobListing: React.FC<JobListingProps> = ({ job }) => {
             <FaMapMarker className="inline pb-1 text-lg mr-2" />
             {job.location}
           </address>
-          <a
-            href={`/jobs/${job.id}`}
+          <Link
+            to={`/jobs/${job.id}`}
             className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-semibold"
           >
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </div>
