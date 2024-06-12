@@ -20,13 +20,3 @@ const App = () => {
 };
 
 export default App;
-
-/* 
-    <>
-      <Navbar />
-      <Hero />
-      <HomeCards />
-      <JobListings />
-      <ViewAllJobs />
-    </>
-     */
