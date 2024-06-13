@@ -1,4 +1,5 @@
 import React from "react";
+import { JobForm } from "../types/Job";
 
 const AddJobPage = () => {
   const [type, setType] = React.useState("Full-Time");
@@ -6,24 +7,27 @@ const AddJobPage = () => {
   const [description, setDescription] = React.useState("");
   const [salary, setSalary] = React.useState("Under $50K");
   const [location, setLocation] = React.useState("");
-  const [company, setCompany] = React.useState("");
+  const [companyName, setCompanyName] = React.useState("");
   const [companyDescription, setCompanyDescription] = React.useState("");
   const [contactEmail, setContactEmail] = React.useState("");
   const [contactPhone, setContactPhone] = React.useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log({
+
+    const newJob: JobForm = {
       type,
       title,
       description,
       salary,
       location,
-      company,
-      companyDescription,
-      contactEmail,
-      contactPhone,
-    });
+      company: {
+        name: companyName,
+        description: companyDescription,
+        contactEmail,
+        contactPhone,
+      },
+    };
   }
 
   return (
@@ -144,8 +148,8 @@ const AddJobPage = () => {
                 name="company"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
             <div className="mb-4">

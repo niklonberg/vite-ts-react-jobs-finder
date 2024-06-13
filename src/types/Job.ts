@@ -14,3 +14,5 @@ export interface Job {
   salary: string;
   company: Company;
 }
+
+export type JobForm = Omit<Job, "id">;
