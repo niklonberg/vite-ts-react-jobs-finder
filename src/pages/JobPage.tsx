@@ -8,7 +8,7 @@ const JobPage = ({
 }: {
   deleteJob: (id: string) => Promise<void>;
 }) => {
-  const { id } = useParams<{ id: string }>(); // Get the job ID from the URL
+  const { id } = useParams(); // Get the job ID from the URL
   const job = useLoaderData() as Job | undefined;
 
   if (!id || !job) return <p>{!id ? "Job ID not found" : "Job not found"}</p>;
