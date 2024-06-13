@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# React Jobs Finder website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An SPA where you can see a list of different jobs, and employers can post jobs.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Single page application created with vite and react in TypeScript.
+Json server acts as the backend, the data comes from the jobs.json file.
+React router used for navigation.
 
-## Expanding the ESLint configuration
+## Page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This app is not hosted online, in order to run you must:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone or download this repo
+2. Go to the package.json file. The two scripts that are of interest is "dev" and "server"
+3. In one terminal, run "npm run dev" or use yarn. This will run the frontend
+   site on http://localhost:3000/
+4. In another terminal run "npm run server". This starts the json server, which watches the jobs.json file and monitors http requests, performing CRUD operations as needed. The json server runs on http://localhost:8000/ - you can visit that url if you want to.
