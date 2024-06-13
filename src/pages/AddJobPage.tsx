@@ -23,10 +23,10 @@ const AddJobPage = ({
       salary: formData.get("salary") as string,
       location: formData.get("location") as string,
       company: {
-        name: formData.get("companyName") as string,
-        description: formData.get("companyDescription") as string,
-        contactEmail: formData.get("contactEmail") as string,
-        contactPhone: formData.get("contactPhone") as string,
+        name: formData.get("company") as string,
+        description: formData.get("company_description") as string,
+        contactEmail: formData.get("contact_email") as string,
+        contactPhone: formData.get("contact_phone") as string,
       },
     };
 
