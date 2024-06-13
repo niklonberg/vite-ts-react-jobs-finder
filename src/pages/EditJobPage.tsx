@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
+import { useParams, useLoaderData, useNavigate } from "react-router-dom";
+import { Job } from "../types/Job";
 
 const EditJobPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const job = useLoaderData() as Job | undefined;
 
-export default EditJobPage
+  return <div>{job?.title}</div>;
+};
+
+export default EditJobPage;
