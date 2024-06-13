@@ -11,11 +11,28 @@ const AddJobPage = () => {
   const [contactEmail, setContactEmail] = React.useState("");
   const [contactPhone, setContactPhone] = React.useState("");
 
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log({
+      type,
+      title,
+      description,
+      salary,
+      location,
+      company,
+      companyDescription,
+      contactEmail,
+      contactPhone,
+    });
+  }
+
   return (
     <section className="bg-blue-50">
       <div className="container m-auto max-w-3xl py-20">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
-          <form>
+          <form
+            onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}
+          >
             <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
             <div className="mb-4">
               <label
