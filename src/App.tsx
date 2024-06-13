@@ -14,6 +14,7 @@ import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 import addJob from "./utils/addJob";
 import deleteJob from "./utils/deleteJob";
+import updateJob from "./utils/updateJob";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -29,7 +30,7 @@ const App = () => {
         />
         <Route
           path="/edit-job/:id"
-          element={<EditJobPage />}
+          element={<EditJobPage updateJobSubmit={updateJob} />}
           loader={jobLoader}
         />
         <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />} />
