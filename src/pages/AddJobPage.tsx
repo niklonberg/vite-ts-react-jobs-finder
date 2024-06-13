@@ -1,7 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { JobForm } from "../types/Job";
 
-const AddJobPage = () => {
+const AddJobPage = ({ addJobSubmit }) => {
   const [type, setType] = React.useState("Full-Time");
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
@@ -11,6 +12,8 @@ const AddJobPage = () => {
   const [companyDescription, setCompanyDescription] = React.useState("");
   const [contactEmail, setContactEmail] = React.useState("");
   const [contactPhone, setContactPhone] = React.useState("");
+
+  const navigate = useNavigate();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,6 +31,10 @@ const AddJobPage = () => {
         contactPhone,
       },
     };
+
+    addJobSubmit(newJob);
+
+    return navigate("/jobs");
   }
 
   return (
