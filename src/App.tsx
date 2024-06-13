@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage";
 import JobsPage from "./pages/JobsPage";
 import JobPage from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
+import addJob from "./utils/addJob";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/jobs" element={<JobsPage />} />
         {/* <Route path="/jobs/:id" element={<JobPage />} /> vanilla JobPage route*/}
         <Route path="/jobs/:id" element={<JobPage />} loader={jobLoader} />
-        <Route path="/add-job" element={<AddJobPage />} />
+        <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
