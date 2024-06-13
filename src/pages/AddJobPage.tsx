@@ -2,7 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { JobForm } from "../types/Job";
 
-const AddJobPage = ({ addJobSubmit }) => {
+const AddJobPage = ({
+  addJobSubmit,
+}: {
+  addJobSubmit: (newJob: JobForm) => Promise<void>;
+}) => {
   const [type, setType] = React.useState("Full-Time");
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
