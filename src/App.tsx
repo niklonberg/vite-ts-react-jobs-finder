@@ -12,6 +12,7 @@ import JobsPage from "./pages/JobsPage";
 import JobPage from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import addJob from "./utils/addJob";
+import deleteJob from "./utils/deleteJob";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -20,7 +21,11 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />} />
         {/* <Route path="/jobs/:id" element={<JobPage />} /> vanilla JobPage route*/}
-        <Route path="/jobs/:id" element={<JobPage />} loader={jobLoader} />
+        <Route
+          path="/jobs/:id"
+          element={<JobPage deleteJob={deleteJob} />}
+          loader={jobLoader}
+        />
         <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
