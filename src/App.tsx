@@ -4,11 +4,12 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import jobLoader from "./utils/jobLoader";
 import MainLayout from "./layouts/MainLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import JobsPage from "./pages/JobsPage";
-import JobPage, { jobLoader } from "./pages/JobPage";
+import JobPage from "./pages/JobPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
