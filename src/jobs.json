@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "466b",
+      "type": "Full-Time",
+      "title": "Me new test job",
+      "description": "here is the desc",
+      "salary": "Under $50K",
+      "location": "denmark",
+      "company": {
+        "name": "my company",
+        "description": "make things",
+        "contactEmail": "jarjarniks@hotmail.com",
+        "contactPhone": "20711219"
+      }
     }
   ]
 }
