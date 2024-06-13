@@ -1,19 +1,48 @@
 import React from "react";
+import { Job } from "../types/Job";
 
-const JobForm = ({
-  handleSubmit,
-}: {
+interface JobFormProps {
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}) => {
-  const [type, setType] = React.useState("Full-Time");
-  const [title, setTitle] = React.useState("");
-  const [description, setDescription] = React.useState("");
-  const [salary, setSalary] = React.useState("Under $50K");
-  const [location, setLocation] = React.useState("");
-  const [companyName, setCompanyName] = React.useState("");
-  const [companyDescription, setCompanyDescription] = React.useState("");
-  const [contactEmail, setContactEmail] = React.useState("");
-  const [contactPhone, setContactPhone] = React.useState("");
+  jobToUpdate?: Job; // Make jobToUpdate optional
+}
+
+const JobForm: React.FC<JobFormProps> = ({ handleSubmit, jobToUpdate }) => {
+  const [type, setType] = React.useState(jobToUpdate?.type || "Full-Time");
+  const [title, setTitle] = React.useState(jobToUpdate?.title || "");
+  const [description, setDescription] = React.useState(
+    jobToUpdate?.description || ""
+  );
+  const [salary, setSalary] = React.useState(
+    jobToUpdate?.salary || "Under $50K"
+  );
+  const [location, setLocation] = React.useState(jobToUpdate?.location || "");
+  const [companyName, setCompanyName] = React.useState(
+    jobToUpdate?.company.name || ""
+  );
+  const [companyDescription, setCompanyDescription] = React.useState(
+    jobToUpdate?.company.description || ""
+  );
+  const [contactEmail, setContactEmail] = React.useState(
+    jobToUpdate?.company.contactEmail || ""
+  );
+  const [contactPhone, setContactPhone] = React.useState(
+    jobToUpdate?.company.contactPhone || ""
+  );
+
+  // If jobToUpdate changes (e.g., due to data loading), update form fields
+  React.useEffect(() => {
+    if (jobToUpdate) {
+      setType(jobToUpdate.type);
+      setTitle(jobToUpdate.title);
+      setDescription(jobToUpdate.description);
+      setSalary(jobToUpdate.salary);
+      setLocation(jobToUpdate.location);
+      setCompanyName(jobToUpdate.company.name);
+      setCompanyDescription(jobToUpdate.company.description);
+      setContactEmail(jobToUpdate.company.contactEmail);
+      setContactPhone(jobToUpdate.company.contactPhone);
+    }
+  }, [jobToUpdate]);
 
   return (
     <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
