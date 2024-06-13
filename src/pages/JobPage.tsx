@@ -3,11 +3,15 @@ import { Job } from "../types/Job";
 import { Link } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 
-const JobPage = () => {
-  const { id } = useParams(); // Get the job ID from the URL
-  const job = useLoaderData() as Job;
+const JobPage = ({
+  deleteJob,
+}: {
+  deleteJob: (id: string) => Promise<void>;
+}) => {
+  const { id } = useParams<{ id: string }>(); // Get the job ID from the URL
+  const job = useLoaderData() as Job | undefined;
 
-  if (!job) return <p>Job not found</p>;
+  if (!id || !job) return <p>{!id ? "Job ID not found" : "Job not found"}</p>;
 
   return (
     <>
@@ -66,7 +70,10 @@ const JobPage = () => {
                 >
                   Edit Job
                 </Link>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                <button
+                  className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                  onClick={() => deleteJob(id)}
+                >
                   Delete Job
                 </button>
               </div>
