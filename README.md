@@ -6,7 +6,7 @@ An SPA where you can see a list of different jobs, and employers can post jobs.
 
 Single page application created with vite and react in TypeScript.
 Json server acts as the backend, the data comes from the jobs.json file.
-React router used for navigation.
+React router used for navigation. Tailwind for styling, and react-toastify for toast components, react-spinners for loading, react-icons for icons
 
 ## Page
 
