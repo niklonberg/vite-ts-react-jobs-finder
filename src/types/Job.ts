@@ -15,4 +15,4 @@ export interface Job {
   company: Company;
 }
 
-export type JobForm = Omit<Job, "id">;
+export type NewJob = Omit<Job, "id">;

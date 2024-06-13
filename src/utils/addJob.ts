@@ -1,6 +1,6 @@
-import { JobForm } from "../types/Job";
+import { NewJob } from "../types/Job";
 
-async function addJob(newJob: JobForm) {
+async function addJob(newJob: NewJob) {
   const res = await fetch("/api/jobs", {
     method: "POST",
     headers: {
