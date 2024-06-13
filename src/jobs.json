@@ -87,14 +87,14 @@
     {
       "id": "466b",
       "type": "Full-Time",
-      "title": "Me new test job",
+      "title": "test name change",
       "description": "here is the desc",
       "salary": "Under $50K",
       "location": "denmark",
       "company": {
-        "name": "my company",
-        "description": "make things",
-        "contactEmail": "jarjarniks@hotmail.com",
+        "name": "this was missing",
+        "description": "",
+        "contactEmail": "niklonberg@gmail.com",
         "contactPhone": "20711219"
       }
     }
