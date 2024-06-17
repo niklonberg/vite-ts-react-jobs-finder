@@ -12,7 +12,7 @@ React router used for navigation. Tailwind for styling, and react-toastify for t
 
 This app is not hosted online, in order to run you must:
 
-1. Clone or download this repo
+1. Clone or download this repo. Open it in your favorite code editor, and run npm install
 2. Go to the package.json file. The two scripts that are of interest is "dev" and "server"
 3. In one terminal, run "npm run dev" or use yarn. This will run the frontend
    site on http://localhost:3000/
